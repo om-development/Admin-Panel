@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>admin-panel</title>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+
+<body class="grid h-screen" style="grid-template-columns: 14rem 1fr; 
+             grid-template-rows: auto 1fr;">
+  <div class="h-20 flex justify-around p-5">
+    <div class="logo">
+      <img src="logo.svg" class="h-12" alt="">
+    </div>
+    <h1 class="text-3xl font-extrabold font-larger items-center h-10">Valex</h1>
+  </div>
+  <div class="right-nav flex justify-between items-center">
+    <section class="flex justify-between items-center py-3">
+
+      <button class="ml-3 w-8 h-2 flex justify-center items-center "><svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg></button>
+      <div class="search-bar ml-3 bg-gray-300 h-8 rounded-2xl ">
+        <input type="search" id="" placeholder="Search" class="inset-0 outline-none px-3 w-full h-full bg-transparent ">
+      </div>
+    </section>
+    <section class="flex justify-between items-center py-3 mr-5 ">
+      <div class="rounded-full h-7"><img src="vite.svg" class="h-full w-full" alt=""></div>
+      <div class="theme w-8 h-2 flex justify-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </div>
+      <div class="inbox w-8 h-2 flex justify-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2" />
+          <path d="M2 7l10 7 10-7" />
+        </svg>
+      </div>
+      <div class="bell w-8 h-2 flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+          height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+        </svg></div>
+      <div class="full w-8 h-2 flex justify-center items-center "><svg xmlns="http://www.w3.org/2000/svg" width="20"
+          height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3" />
+          <path d="M21 8V5a2 2 0 0 0-2-2h-3" />
+          <path d="M3 16v3a2 2 0 0 0 2 2h3" />
+          <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+        </svg></div>
+      <button class="w-8 h-2 flex justify-center items-center">
+        <div style="display: flex; justify-content: center; align-items: center; height: 100px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="20" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </div>
+      </button>
+      <div class="profile w-8 h-8 ml-2 flex justify-center items-center "><img src="src/assets/gyan.png "
+          class="w-full rounded-full h-full" alt=""></div>
+      <div class="setting animate-spin w-8 h-8 ml-2 flex justify-center items-center "><svg
+          xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3" />
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg></div>
+
+    </section>
+  </div>
+  <aside class="flex flex-col p-5 gap-3 overflow-y-auto">
+
+    <!-- MAIN -->
+    <span class="text-gray-800 font-bold text-xs uppercase tracking-widest">Main</span>
+    <a href="#" class="flex items-center gap-3 text-blue-600 font-semibold">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7" />
+        <rect x="14" y="3" width="7" height="7" />
+        <rect x="3" y="14" width="7" height="7" />
+        <rect x="14" y="14" width="7" height="7" />
+      </svg>
+      Index
+    </a>
+
+    <!-- GENERAL -->
+    <span class="text-gray-800 font-bold text-xs uppercase tracking-widest mt-3">General</span>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+        <line x1="9" y1="9" x2="9.01" y2="9" />
+        <line x1="15" y1="9" x2="15.01" y2="9" />
+      </svg>
+      Icons
+    </a>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="20" x2="18" y2="10" />
+        <line x1="12" y1="20" x2="12" y2="4" />
+        <line x1="6" y1="20" x2="6" y2="14" />
+      </svg>
+      Charts
+    </a>
+
+    <!-- WEB APPS -->
+    <span class="text-gray-800 font-bold text-xs uppercase tracking-widest mt-3">Web Apps</span>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+      Apps
+    </a>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+        <line x1="12" y1="22" x2="12" y2="15.5" />
+        <polyline points="22 8.5 12 15.5 2 8.5" />
+      </svg>
+      Elements
+    </a>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="10" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+      Advanced UI
+    </a>
+
+    <!-- MULTI LEVELS -->
+    <span class="text-gray-800 font-bold text-xs uppercase tracking-widest mt-3">Multi Levels</span>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <rect x="2" y="7" width="20" height="3" />
+        <rect x="2" y="14" width="20" height="3" />
+      </svg>
+      Menu Levels
+    </a>
+
+    <!-- COMPONENTS -->
+    <span class="text-gray-800 font-bold text-xs uppercase tracking-widest mt-3">Components</span>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <line x1="3" y1="9" x2="21" y2="9" />
+        <line x1="9" y1="21" x2="9" y2="9" />
+      </svg>
+      Forms
+    </a>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <line x1="3" y1="9" x2="21" y2="9" />
+        <line x1="3" y1="15" x2="21" y2="15" />
+        <line x1="9" y1="3" x2="9" y2="21" />
+        <line x1="15" y1="3" x2="15" y2="21" />
+      </svg>
+      Tables
+    </a>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 8v4l3 3" />
+      </svg>
+      Landing Page
+    </a>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+        <circle cx="12" cy="9" r="2.5" />
+      </svg>
+      Maps
+    </a>
+
+    <!-- PAGES -->
+    <span class="text-gray-800 font-bold text-xs uppercase tracking-widest mt-3">Pages</span>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <line x1="3" y1="9" x2="21" y2="9" />
+        <line x1="3" y1="15" x2="21" y2="15" />
+      </svg>
+      Pages
+    </a>
+    <a href="#" class="flex items-center gap-3 text-gray-500 hover:text-blue-500 cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="10" />
+        <circle cx="12" cy="12" r="4" />
+        <line x1="4.93" y1="4.93" x2="9.17" y2="9.17" />
+        <line x1="14.83" y1="14.83" x2="19.07" y2="19.07" />
+        <line x1="14.83" y1="9.17" x2="19.07" y2="4.93" />
+        <line x1="4.93" y1="19.07" x2="9.17" y2="14.83" />
+      </svg>
+      Utilities
+    </a>
+
+  </aside>
+  <main class="p-3 py-5 bg-blue-50">
+    <div
+      class="container flex justify-between pr-5 flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0">
+      <div class="welcome flex flex-col mb-0 ">
+        <h1 class=" text-2xl font-sans text-left ">Hi, welcome back!</h1>
+        <span class="text-sm text-gray-400 font-sans">Sales monitoring dashboard template.</span>
+      </div>
+      <div class="update flex justify-between space-x-3 flex-col items-center md:flex-row ">
+        <div class="no-1 flex flex-col space-y-1.5">
+          <span class=" text-gray-400 font-sans">Customer Ratings</span>
+          <div class="rating flex ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
+              stroke="currentColor" stroke-width="1" class="text-yellow-400">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
+              stroke="currentColor" stroke-width="1" class="text-yellow-400">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
+              stroke="currentColor" stroke-width="1" class="text-yellow-400">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
+              stroke="currentColor" stroke-width="1" class="text-yellow-400">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
+              stroke="currentColor" stroke-width="1" class="text-yellow-400">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <span class="text-gray-900 text-xs">(14,873)</span>
+          </div>
+        </div>
+        <div class="no-2 flex flex-col">
+          <span class=" text-gray-400 font-sans">Online Sales</span>
+          <div class="Amount flex font-bold">
+            567,789
+          </div>
+        </div>
+        <div class="no-3 flex flex-col">
+          <span class=" text-gray-400 font-sans">Offline Sales</span>
+          <div class="Amount flex font-bold ">
+            767,789
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+  
+</body>
+
+</html>
